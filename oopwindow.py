@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import mainwindow
 
+#子类继承另外一个文件中的父类
 class Ui_OOPWindow(mainwindow.Ui_MainWindow):
     def readFromCSV(self):
         return ''
