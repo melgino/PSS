@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 # test github
 # test github2
 # test github3
+# test github push code in pycharm
 #
 #
 #
