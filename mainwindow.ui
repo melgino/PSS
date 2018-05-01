@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>627</width>
+    <height>311</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PSS(Python Statistical Solutions)</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="yehaibopush">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>210</y>
+      <width>85</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>yehaibo</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>627</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Get character</string>
+    </property>
+    <addaction name="actionFrom_logs"/>
+    <addaction name="actionFrom_Web_data"/>
+    <addaction name="actionFrom_CSV_file"/>
+    <addaction name="actionFrom_Spark"/>
+    <addaction name="actionFrom_mongodb"/>
+    <addaction name="actionFrom_mysql"/>
+    <addaction name="actionFrom_Oracle"/>
+    <addaction name="actionFrom_Redis"/>
+    <addaction name="actionFrom_Elasticsearch"/>
+   </widget>
+   <widget class="QMenu" name="menuMenu2">
+    <property name="title">
+     <string>Process character</string>
+    </property>
+    <addaction name="actionClearn"/>
+    <addaction name="actionPre_process"/>
+   </widget>
+   <widget class="QMenu" name="menuMonitor_character">
+    <property name="title">
+     <string>Monitor character</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_documents"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_PSS"/>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuMenu2"/>
+   <addaction name="menuMonitor_character"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionFrom_logs">
+   <property name="text">
+    <string>From logs</string>
+   </property>
+  </action>
+  <action name="actionFrom_Web_data">
+   <property name="text">
+    <string>From Web data</string>
+   </property>
+  </action>
+  <action name="actionFrom_CSV_file">
+   <property name="text">
+    <string>From CSV file</string>
+   </property>
+  </action>
+  <action name="actionFrom_Spark">
+   <property name="text">
+    <string>From Spark</string>
+   </property>
+  </action>
+  <action name="actionFrom_mongodb">
+   <property name="text">
+    <string>From mongodb</string>
+   </property>
+  </action>
+  <action name="actionFrom_mysql">
+   <property name="text">
+    <string>From Mysql</string>
+   </property>
+  </action>
+  <action name="actionFrom_Oracle">
+   <property name="text">
+    <string>From Oracle</string>
+   </property>
+  </action>
+  <action name="actionFrom_Redis">
+   <property name="text">
+    <string>From Redis</string>
+   </property>
+  </action>
+  <action name="actionFrom_Elasticsearch">
+   <property name="text">
+    <string>From Elasticsearch</string>
+   </property>
+  </action>
+  <action name="actionAbout_documents">
+   <property name="text">
+    <string>About documents</string>
+   </property>
+  </action>
+  <action name="actionAbout_PSS">
+   <property name="text">
+    <string>About PSS</string>
+   </property>
+  </action>
+  <action name="actionClearn">
+   <property name="text">
+    <string>Clearn</string>
+   </property>
+  </action>
+  <action name="actionPre_process">
+   <property name="text">
+    <string>Pre-process</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
