@@ -1,5 +1,6 @@
 import sys
 import mainwindow
+import oopwindow
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 ####################################
@@ -15,7 +16,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
     # you need to invoke your code yourself
-    ui = mainwindow.Ui_MainWindow()
+    ui = oopwindow.Ui_OOPWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

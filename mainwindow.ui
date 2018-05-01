@@ -11,20 +11,46 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PSS(Python Statistical Solutions)</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="yehaibopush">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>210</y>
+      <x>480</x>
+      <y>200</y>
       <width>85</width>
       <height>29</height>
      </rect>
     </property>
     <property name="text">
      <string>yehaibo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelYehaibo">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FirstYehaibo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>120</y>
+      <width>85</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Test2</string>
     </property>
    </widget>
   </widget>
@@ -37,44 +63,48 @@
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMenu">
+   <widget class="QMenu" name="menuGet_Character">
     <property name="title">
-     <string>Get character</string>
+     <string>Get Character</string>
     </property>
-    <addaction name="actionFrom_logs"/>
-    <addaction name="actionFrom_Web_data"/>
-    <addaction name="actionFrom_CSV_file"/>
-    <addaction name="actionFrom_Spark"/>
-    <addaction name="actionFrom_mongodb"/>
-    <addaction name="actionFrom_mysql"/>
-    <addaction name="actionFrom_Oracle"/>
-    <addaction name="actionFrom_Redis"/>
+    <addaction name="actionFrom_redis"/>
+    <addaction name="actionFrom_Kafka"/>
     <addaction name="actionFrom_Elasticsearch"/>
+    <addaction name="actionFrom_Mysql"/>
+    <addaction name="actionFrom_Mongodb"/>
+    <addaction name="actionFrom_Oracle"/>
    </widget>
-   <widget class="QMenu" name="menuMenu2">
+   <widget class="QMenu" name="menuProcess_Character">
     <property name="title">
-     <string>Process character</string>
+     <string>Process Character</string>
     </property>
-    <addaction name="actionClearn"/>
-    <addaction name="actionPre_process"/>
+    <widget class="QMenu" name="menuClean">
+     <property name="title">
+      <string>Clean</string>
+     </property>
+     <addaction name="actionOutlier"/>
+     <addaction name="actionanti_spam"/>
+    </widget>
+    <widget class="QMenu" name="menuPre_Process">
+     <property name="title">
+      <string>Pre-Process</string>
+     </property>
+     <addaction name="actionData"/>
+     <addaction name="actionChooose"/>
+     <addaction name="actionCombination"/>
+     <addaction name="actionDecrease"/>
+    </widget>
+    <addaction name="menuClean"/>
+    <addaction name="menuPre_Process"/>
    </widget>
-   <widget class="QMenu" name="menuMonitor_character">
+   <widget class="QMenu" name="menucharacter">
     <property name="title">
-     <string>Monitor character</string>
+     <string>Monitor Character</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionAbout_documents"/>
-    <addaction name="separator"/>
-    <addaction name="actionAbout_PSS"/>
-   </widget>
-   <addaction name="menuMenu"/>
-   <addaction name="menuMenu2"/>
-   <addaction name="menuMonitor_character"/>
-   <addaction name="menuHelp"/>
+   <addaction name="menuGet_Character"/>
+   <addaction name="menuProcess_Character"/>
+   <addaction name="menucharacter"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -85,44 +115,14 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionFrom_logs">
-   <property name="text">
-    <string>From logs</string>
-   </property>
-  </action>
-  <action name="actionFrom_Web_data">
-   <property name="text">
-    <string>From Web data</string>
-   </property>
-  </action>
-  <action name="actionFrom_CSV_file">
-   <property name="text">
-    <string>From CSV file</string>
-   </property>
-  </action>
-  <action name="actionFrom_Spark">
-   <property name="text">
-    <string>From Spark</string>
-   </property>
-  </action>
-  <action name="actionFrom_mongodb">
-   <property name="text">
-    <string>From mongodb</string>
-   </property>
-  </action>
-  <action name="actionFrom_mysql">
-   <property name="text">
-    <string>From Mysql</string>
-   </property>
-  </action>
-  <action name="actionFrom_Oracle">
-   <property name="text">
-    <string>From Oracle</string>
-   </property>
-  </action>
-  <action name="actionFrom_Redis">
+  <action name="actionFrom_redis">
    <property name="text">
     <string>From Redis</string>
+   </property>
+  </action>
+  <action name="actionFrom_Kafka">
+   <property name="text">
+    <string>From Kafka</string>
    </property>
   </action>
   <action name="actionFrom_Elasticsearch">
@@ -130,24 +130,49 @@
     <string>From Elasticsearch</string>
    </property>
   </action>
-  <action name="actionAbout_documents">
+  <action name="actionFrom_Mysql">
    <property name="text">
-    <string>About documents</string>
+    <string>From Mysql</string>
    </property>
   </action>
-  <action name="actionAbout_PSS">
+  <action name="actionFrom_Mongodb">
    <property name="text">
-    <string>About PSS</string>
+    <string>From Mongodb</string>
    </property>
   </action>
-  <action name="actionClearn">
+  <action name="actionFrom_Oracle">
    <property name="text">
-    <string>Clearn</string>
+    <string>From Oracle</string>
    </property>
   </action>
-  <action name="actionPre_process">
+  <action name="actionOutlier">
    <property name="text">
-    <string>Pre-process</string>
+    <string>Outlier</string>
+   </property>
+  </action>
+  <action name="actionanti_spam">
+   <property name="text">
+    <string>Anti-Spam</string>
+   </property>
+  </action>
+  <action name="actionData">
+   <property name="text">
+    <string>Data</string>
+   </property>
+  </action>
+  <action name="actionChooose">
+   <property name="text">
+    <string>Chooose</string>
+   </property>
+  </action>
+  <action name="actionCombination">
+   <property name="text">
+    <string>Combination</string>
+   </property>
+  </action>
+  <action name="actionDecrease">
+   <property name="text">
+    <string>Decrease Dimension</string>
    </property>
   </action>
  </widget>
